@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ai deDamoua</title>
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            transition: 0.5s; /* ფერების რბილი გადასვლისთვის */
+        }
+        h1 {
+            color: #3498db;
+            animation: slideDown 1.5s ease-out;
+        }
+        img {
+            border: 5px solid white;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+            animation: breathe 3s infinite ease-in-out;
+        }
+        .my-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .my-button:hover {
+            background-color: #c0392b;
+            transform: scale(1.1);
+        }
+
+        /* ანიმაციები */
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes breathe {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .interaction-box {
+            text-align: center; 
+            margin: 20px auto; 
+            padding: 20px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 15px;
+            max-width: 400px;
+        }
+        input {
+            padding: 10px; 
+            border-radius: 5px; 
+            border: none; 
+            margin-bottom: 10px;
+        }
+        .light-mode {
+            background-color: #ecf0f1 !important;
+            color: #2c3e50 !important;
+        }
+        #weather-info p {
+            margin: 5px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="toggleMode()" id="modeBtn" style="padding: 10px; cursor: pointer; border-radius: 20px; border: none; background: #f1c40f;">🌙 ღამის რეჟიმი</button>
+
+    <h1>ბარო ბიჭები!</h1>
+    <p>რომელი იძახდა ვერაოო?! </p>
+    
+    <img src="photo.jpg.jpg" width="300" alt="Snowboarding">
+    
+    <br><br>
+    
+    <a href="https://www.youtube.com/shorts/Roa75W0x52E" class="my-button">გადადი ვიდეო-ზე</a>
+    
+    <br><br>
+    
+    <audio controls>
+        <source src="music.mp3.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ამინდის სექცია -->
+    <div class="interaction-box">
+        <h3>ამინდი თბილისში</h3>
+        <div id="weather-info">
+            <p id="temp" style="font-size: 2rem; font-weight: bold;">--°C</p>
+            <p id="desc">იტვირთება...</p>
+        </div>
+    </div>
+
+    <!-- მისალმების სექცია -->
+    <div class="interaction-box">
+        <h3>მოგვესალმე:</h3>
+        <input type="text" id="userName" placeholder="ჩაწერე შენი სახელი">
+        <br>
+        <button onclick="sayHello()" style="padding: 10px 20px; cursor: pointer; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-weight: bold;">გაგზავნა</button>
+        <p id="greetingText" style="margin-top: 15px; font-weight: bold; color: #f1c40f;"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
